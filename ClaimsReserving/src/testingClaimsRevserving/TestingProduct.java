@@ -24,4 +24,9 @@ public class TestingProduct {
 	public void testGetProduct() {
 		assertEquals(testProduct.getProduct(), testData[0]);
 	}
+
+	@Test
+	public void testGetOrigin() {
+		assertEquals(testProduct.getOrigin(), testData[1]);
+	}
 }
