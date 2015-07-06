@@ -11,13 +11,13 @@ import claimsreversing.Product;
 public class TestingProduct {
 
 	Product testProduct = Product.of("Comp", "1992", "1992", "110.0");
-	AccumulateData store;
+	AccumulateData storeOfUnstructuredData;
 	String[] testData;
 	
 	@Before
 	public void buildBefore() {
-		store = new AccumulateData("input");
-		testData = store.getUnstructuredProductData().get(0);
+		storeOfUnstructuredData = new AccumulateData("input");
+		testData = storeOfUnstructuredData.getUnstructuredProductData().get(0);
 	}
 	
 	@Test
@@ -33,5 +33,10 @@ public class TestingProduct {
 	@Test
 	public void testGetDevelopmentYear() {
 		assertEquals(testProduct.getDevelopmentYear(), testData[2]);
+	}
+	
+	@Test
+	public void testGetIncrementValue() {
+		assertEquals(testProduct.getIncrementValue(), testData[3]);
 	}
 }
