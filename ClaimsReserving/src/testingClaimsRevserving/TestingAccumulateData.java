@@ -7,7 +7,7 @@ import org.junit.Test;
 
 import claimsreversing.AccumulateData;
 
-public class TestingClaimsReserving {
+public class TestingAccumulateData {
 	
 	AccumulateData store;
 	String[] testData;
