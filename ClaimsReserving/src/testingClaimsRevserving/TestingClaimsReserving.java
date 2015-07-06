@@ -15,7 +15,6 @@ public class TestingClaimsReserving {
 	@Before
 	public void buildBefore() {
 		store = new AccumulateData("input");
-		store.getDataFromCSVReader();
 		testData = store.getUnstructuredProductData().get(0);
 	}
 	
