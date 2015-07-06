@@ -13,7 +13,7 @@ import com.opencsv.CSVReader;
 public class AccumulateData {
 	
 	@Getter
-	private List<String[]> unstructuredProductData;;
+	private List<String[]> unstructuredProductData;
 	private CSVReader reader;
 	
 	public AccumulateData(String fileName) {
