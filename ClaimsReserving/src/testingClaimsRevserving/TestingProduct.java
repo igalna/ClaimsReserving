@@ -27,6 +27,11 @@ public class TestingProduct {
 
 	@Test
 	public void testGetOrigin() {
-		assertEquals(testProduct.getOrigin(), testData[1]);
+		assertEquals(testProduct.getOriginYear(), testData[1]);
+	}
+	
+	@Test
+	public void testGetDevelopmentYear() {
+		assertEquals(testProduct.getDevelopmentYear(), testData[2]);
 	}
 }
