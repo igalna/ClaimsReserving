@@ -35,4 +35,9 @@ public class TestingTriangleCreator {
 		assertTrue(testMap.containsKey("Comp"));
 	}
 
+	
+	@Test
+	public void testContainsYear() {
+		assertEquals(testMap.get("Non-Comp").get(1990).get(0).getOriginYear(), Integer.valueOf(1990));
+	}
 }
