@@ -15,34 +15,47 @@ public class TestingDataFormatter {
 
 	DataRowFormatter testFormatter;
 	List<Product> formattedData;
-	Product testProduct;
+	Product firstProduct;
+	Product lastProduct;
 	
 	@Before
 	public void buildBefore() {
 		testFormatter = DataRowFormatter.of(new AccumulateData("input").getUnstructuredProductData());
 		formattedData = testFormatter.dataFormatter();
-		testProduct = formattedData.get(0);
+		firstProduct = formattedData.get(0);
+		lastProduct = formattedData.get(formattedData.size()-1);
 		
 	}
 	
 	@Test
 	public void testProductIsString() {
-		assertEquals("Comp", testProduct.getProduct());
+		assertEquals("Comp", firstProduct.getProduct());
 	}
 	
 	@Test
 	public void testOriginYearIsInteger() {
-		assertEquals(Integer.valueOf(1992), testProduct.getOriginYear());
+		assertEquals(Integer.valueOf(1992), firstProduct.getOriginYear());
 	}
 	
 	@Test
 	public void testDevelopmentYearIsInteger() {
-		assertEquals(Integer.valueOf(1992), testProduct.getDevelopmentYear());
+		assertEquals(Integer.valueOf(1992), firstProduct.getDevelopmentYear());
 	}
 	
 	@Test
 	public void testIncrementValueIsDouble() {
-		assertEquals(Double.valueOf(110.0), testProduct.getIncrementValue());
+		assertEquals(Double.valueOf(110.0), firstProduct.getIncrementValue());
 	}
+	
 
+
+	@Test
+	public void testFinalCaseProductIsString() {
+		assertEquals("Non-Comp", lastProduct.getProduct());
+	}
+	
+	@Test
+	public void testFinalCaseOriginYear() {
+		assertEquals(Integer.valueOf(1993), lastProduct.getOriginYear());
+	}
 }
