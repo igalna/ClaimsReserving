@@ -85,6 +85,7 @@ public class TestingDataFormatter {
 	}
 
 	
+	
 	@Test
 	public void testMidProductProductName() {
 		assertEquals("Non-Comp", midProduct.getProduct());
@@ -93,5 +94,15 @@ public class TestingDataFormatter {
 	@Test
 	public void testMidProductOriginYear() {
 		assertEquals(Integer.valueOf(1991), midProduct.getOriginYear());
+	}
+	
+	@Test
+	public void testMidProductDevelopmentYear() {
+		assertEquals(Integer.valueOf(1992), midProduct.getDevelopmentYear());
+	}
+	
+	@Test
+	public void testMidProductIncrementValue() {
+		assertEquals(Double.valueOf(75.0), midProduct.getIncrementValue());
 	}
 }
