@@ -39,5 +39,9 @@ public class OutputDataToCSVFile {
 	private int getEarliestYear() {
 		return inputData.stream().min(Triangle::getOriginYear);	
 	}
+	
+	private int getNumberOfDevelopMentYears() {
+		return (getEarliestYear() - inputData.stream().max(Triangle::getOriginYear)) + 1;
+	}
 
 }
