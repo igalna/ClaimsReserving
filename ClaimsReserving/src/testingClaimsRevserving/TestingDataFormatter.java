@@ -4,7 +4,10 @@ import static org.junit.Assert.*;
 
 import java.util.List;
 
+import org.junit.After;
+import org.junit.AfterClass;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 import claimsreversing.DataRowFormatter;
@@ -17,6 +20,7 @@ public class TestingDataFormatter {
 	List<Product> formattedData;
 	Product firstProduct;
 	Product lastProduct;
+	Product midProduct;
 	
 	@Before
 	public void buildBefore() {
@@ -24,19 +28,30 @@ public class TestingDataFormatter {
 		formattedData = testFormatter.formatInputDataIntoStructuredProducts();
 		firstProduct = formattedData.get(0);
 		lastProduct = formattedData.get(formattedData.size()-1);
+		midProduct = formattedData.get(7);
+		System.out.println(midProduct);
 		
+	}
+	
+	@After
+	public void tearDown() {
+		testFormatter = null;
+		formattedData = null;
+		firstProduct = null;
+		lastProduct = null;
+		midProduct = null;
 	}
 	
 	@Test
 	public void testProductIsString() {
 		assertEquals("Comp", firstProduct.getProduct());
 	}
-	
+
 	@Test
 	public void testOriginYearIsInteger() {
 		assertEquals(Integer.valueOf(1992), firstProduct.getOriginYear());
 	}
-	
+
 	@Test
 	public void testDevelopmentYearIsInteger() {
 		assertEquals(Integer.valueOf(1992), firstProduct.getDevelopmentYear());
@@ -67,5 +82,16 @@ public class TestingDataFormatter {
 	@Test
 	public void testFinalCaseIncrementValue() {
 		assertEquals(Double.valueOf(100.0), lastProduct.getIncrementValue());
+	}
+
+	
+	@Test
+	public void testMidProductProductName() {
+		assertEquals("Non-Comp", midProduct.getProduct());
+	}
+	
+	@Test
+	public void testMidProductOriginYear() {
+		assertEquals(Integer.valueOf(1991), midProduct.getOriginYear());
 	}
 }
