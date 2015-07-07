@@ -16,4 +16,5 @@ public class Triangle {
 	private Integer originYear;;
 	@Getter
 	private List<Product> listOfProductsInTriangle;
+
 }

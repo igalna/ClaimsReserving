@@ -43,9 +43,6 @@ public class TriangleCreator {
 			}
 			
 		}
-		
-		System.out.println(triangleList.isEmpty());
-		System.out.println(triangleList);
 		return triangleList;
 	}
 	
