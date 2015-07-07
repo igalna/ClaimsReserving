@@ -11,9 +11,9 @@ public class Product {
 	@Getter
 	private String product;
 	@Getter
-	private String originYear;
+	private Integer originYear;
 	@Getter
-	private String developmentYear;
+	private Integer developmentYear;
 	@Getter
-	private String incrementValue;
+	private Double incrementValue;
 }
