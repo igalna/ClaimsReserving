@@ -58,4 +58,14 @@ public class TestingDataFormatter {
 	public void testFinalCaseOriginYear() {
 		assertEquals(Integer.valueOf(1993), lastProduct.getOriginYear());
 	}
+	
+	@Test
+	public void testFinalCaseDevelopmentYear() {
+		assertEquals(Integer.valueOf(1993), lastProduct.getDevelopmentYear());
+	}
+	
+	@Test
+	public void testFinalCaseIncrementValue() {
+		assertEquals(Double.valueOf(100.0), lastProduct.getIncrementValue());
+	}
 }
