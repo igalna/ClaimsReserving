@@ -34,5 +34,15 @@ public class TestingDataFormatter {
 	public void testOriginYearIsInteger() {
 		assertEquals(Integer.valueOf(1992), testProduct.getOriginYear());
 	}
+	
+	@Test
+	public void testDevelopmentYearIsInteger() {
+		assertEquals(Integer.valueOf(1992), testProduct.getDevelopmentYear());
+	}
+	
+	@Test
+	public void testIncrementValueIsDouble() {
+		assertEquals(Double.valueOf(110.0), testProduct.getIncrementValue());
+	}
 
 }
