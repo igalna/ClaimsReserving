@@ -15,30 +15,49 @@
 
 # Stuff to do
   
-  Test and implement the OutputDataToCSVFile class
+  # Test and implement the OutputDataToCSVFile class
+    
     - data in the Triangles needs to be aggregated
+    
     - CSV format needs to be set to include non changing data
+      
       - such as when a product does not increment from one year to the next
-  Test and implement the class to aggregate the data from individual Triangles
+  # Test and implement the class to aggregate the data from individual Triangles
+    
     - create array with length in range of earliest year and final development year of product
+    
     - between the earliest year and the Products origin year
+      
       - populate the array with 0
+    
     - when you hit the products origin year
+      
       - put the increment value in the array
+    
     - for each subsequent Product in the product list
+      
       - check if it is one year after the previous Product
+        
         -if it is not
+          
           - populate the array with the current increment value up to the index of (current product development - last             Product development year)
+        
         - if it is
+          
           - put in the array, the current Product incrementValue added to the previous value held in the array
+    
     - return the array
+      
       - which sould be in the format [45.2, 110, 110, 147]
+      
       - this format is compatible with the desired output format
 
 # Libraries -
 
   JUnit
+  
   Hamcrest
+  
   Lombok 
 
 
