@@ -1,8 +1,8 @@
 package claimsreversing;
 
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
 
 import lombok.AllArgsConstructor;
 
@@ -11,12 +11,42 @@ public class TriangleCreator {
 
 	private List<Product> inputData;
 	
-	public Map<String, Map<Integer, List<Product>>> createTrianglesFromInputData() {
-		Map<String, Map<Integer, List<Product>>> result;
+	
+	public List<Triangle> createTrianglesFromInputData() {
+		//Map<String, Map<Integer, List<Product>>> result;
+		//result = inputData.stream().collect(Collectors.groupingBy(Product::getProduct, Collectors.groupingBy(Product::getOriginYear)));
+		//return result;
 		
-		result = inputData.stream().collect(Collectors.groupingBy(Product::getProduct, Collectors.groupingBy(Product::getOriginYear)));
+		List<Triangle> triangleList = new ArrayList<Triangle>();
+	
 		
-		return result;
+		for (Iterator<Product> productIterator = inputData.iterator(); productIterator.hasNext(); ) {
+			Product product = productIterator.next();
+			if (triangleList.isEmpty()) {
+				Triangle newTriangle = Triangle.of(product.getProduct(), product.getOriginYear(), new ArrayList<Product>());
+				newTriangle.getListOfProductsInTriangle().add(product);
+				triangleList.add(newTriangle);
+			}
+			else {
+				
+				for (Iterator<Triangle> triangleIterator = triangleList.iterator(); triangleIterator.hasNext(); ) {
+					Triangle triangle = triangleIterator.next();
+					if (triangle.getProduct().equals(product.getProduct()) && triangle.getOriginYear().equals(product.getOriginYear())) {
+						triangle.getListOfProductsInTriangle().add(product);
+					}
+					else {
+						Triangle newTriangle = Triangle.of(product.getProduct(), product.getOriginYear(), new ArrayList<Product>());
+						newTriangle.getListOfProductsInTriangle().add(product);
+						triangleList.add(newTriangle);
+					}
+				}
+			}
+			
+		}
+		
+		System.out.println(triangleList.isEmpty());
+		System.out.println(triangleList);
+		return triangleList;
 	}
 	
 }
