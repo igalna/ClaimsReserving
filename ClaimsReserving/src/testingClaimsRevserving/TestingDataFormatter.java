@@ -1,17 +1,15 @@
 package testingClaimsRevserving;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import java.util.List;
 
 import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
-import claimsreversing.DataRowFormatter;
 import claimsreversing.AccumulateData;
+import claimsreversing.DataRowFormatter;
 import claimsreversing.Product;
 
 public class TestingDataFormatter {
@@ -29,7 +27,6 @@ public class TestingDataFormatter {
 		firstProduct = formattedData.get(0);
 		lastProduct = formattedData.get(formattedData.size()-1);
 		midProduct = formattedData.get(7);
-		System.out.println(midProduct);
 		
 	}
 	
