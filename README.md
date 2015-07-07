@@ -19,3 +19,8 @@ Libraries -
   JUnit
   Hamcrest
   Lombok 
+
+
+
+Had been working on project on University computer using Eclipse. When I copied the URL to Eclipse on my home PC to work on this project at home, Eclipse could not compile/run any of the source files.
+So all the commits from 2200 ish on 7/7/2015 were made without TDD or even visual testing.
