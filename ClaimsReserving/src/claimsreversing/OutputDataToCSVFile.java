@@ -17,7 +17,7 @@ import com.opencsv.CSVWriter;
 
 public class OutputDataToCSVFile {
 	
-	private Map<String, Map<Integer, List<Product>>> inputData;
+	private List<Triangle> inputData;
 	private CSVWriter writer;
 
 	
@@ -36,10 +36,8 @@ public class OutputDataToCSVFile {
 		return tempWriter;
 	}
 	
-/*	private int getEarliestYear() {
-		Collection<Map<Integer, List<Product>>> entries = inputData.values();
-		
-		entries.stream().min(Product::getOriginYear);
-	}*/
+	private int getEarliestYear() {
+		return inputData.stream().min(Triangle::getOriginYear);	
+	}
 
 }
