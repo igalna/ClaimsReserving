@@ -21,7 +21,7 @@ public class TestingDataFormatter {
 	@Before
 	public void buildBefore() {
 		testFormatter = DataRowFormatter.of(new AccumulateData("input").getUnstructuredProductData());
-		formattedData = testFormatter.dataFormatter();
+		formattedData = testFormatter.formatInputDataIntoStructuredProducts();
 		firstProduct = formattedData.get(0);
 		lastProduct = formattedData.get(formattedData.size()-1);
 		

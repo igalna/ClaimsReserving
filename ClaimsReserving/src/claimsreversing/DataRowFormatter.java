@@ -13,7 +13,7 @@ public class DataRowFormatter {
 	@Getter
 	private List<String[]> inputData;
 	
-	public List<Product> dataFormatter() {
+	public List<Product> formatInputDataIntoStructuredProducts() {
 		
 		List<Product> result = new ArrayList<Product>();
 		
