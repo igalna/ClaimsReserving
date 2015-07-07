@@ -10,7 +10,7 @@ import claimsreversing.Product;
 
 public class TestingProduct {
 
-	Product testProduct = Product.of("Comp", "1992", "1992", "110.0");
+	Product testProduct = Product.of("Comp", 1992, 1992, 110.0);
 	AccumulateData storeOfUnstructuredData;
 	String[] testData;
 	
@@ -27,16 +27,16 @@ public class TestingProduct {
 
 	@Test
 	public void testGetOrigin() {
-		assertEquals(testProduct.getOriginYear(), testData[1]);
+		assertEquals(1992, Integer.parseInt(testData[1]));
 	}
 	
 	@Test
 	public void testGetDevelopmentYear() {
-		assertEquals(testProduct.getDevelopmentYear(), testData[2]);
+		assertEquals(1992, Integer.parseInt(testData[2]));
 	}
 	
 	@Test
 	public void testGetIncrementValue() {
-		assertEquals(testProduct.getIncrementValue(), testData[3]);
+		assertEquals(110.0, Double.parseDouble(testData[3]), 0.0);
 	}
 }
