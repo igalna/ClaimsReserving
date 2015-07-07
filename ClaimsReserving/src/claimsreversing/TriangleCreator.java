@@ -28,7 +28,6 @@ public class TriangleCreator {
 				triangleList.add(newTriangle);
 			}
 			else {
-				List<Triangle> placeHolderList = new ArrayList<Triangle>();
 				for (Triangle triangle : triangleList) {
 					if (triangle.getProduct().equals(product.getProduct()) && triangle.getOriginYear().equals(product.getOriginYear())) {
 						triangle.getListOfProductsInTriangle().add(product);
@@ -36,8 +35,7 @@ public class TriangleCreator {
 				}
 				Triangle newTriangle = Triangle.of(product.getProduct(), product.getOriginYear(), new ArrayList<Product>());
 				newTriangle.getListOfProductsInTriangle().add(product);
-				placeHolderList.addAll(triangleList);
-				placeHolderList.add(newTriangle);
+				triangleList.add(newTriangle);
 			}
 			
 		}
