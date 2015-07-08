@@ -39,5 +39,4 @@ public class TriangleCreator {
 		}
 		return triangleList;
 	}
-	
 }
