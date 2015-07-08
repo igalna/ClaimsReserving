@@ -14,16 +14,10 @@ import claimsreversing.TriangleCreator;
 
 public class TestingTriangleCreator {
 
-	TriangleCreator creator;
-	DataRowFormatter testFormatter;
-	List<TriangleOfPaymentFigures> testList;
+	DataRowFormatter testFormatter = DataRowFormatter.of(new InputDataFromCSVFile("input").getUnstructuredProductData());
+	TriangleCreator creator = TriangleCreator.of(testFormatter.formatInputDataIntoStructuredProducts());
+	List<TriangleOfPaymentFigures> testList = creator.createTrianglesFromInputData();
 	
-	@Before
-	public void buildBefore() {
-		testFormatter = DataRowFormatter.of(new InputDataFromCSVFile("input").getUnstructuredProductData());
-		creator = TriangleCreator.of(testFormatter.formatInputDataIntoStructuredProducts());
-		testList = creator.createTrianglesFromInputData();
-	}
 
 	@Test
 	public void testAddTriangle() {
@@ -40,5 +34,20 @@ public class TestingTriangleCreator {
 	public void testSecondTriangleOnlyHasItselfAsProduct() {
 		assertEquals(1, testList.get(1).getListOfProductsInTriangle().size());
 		assertEquals("Comp", testList.get(1).getListOfProductsInTriangle().get(0).getProduct());
+		assertEquals(Integer.valueOf(1993), testList.get(1).getListOfProductsInTriangle().get(0).getOriginYear());
 	}
+	
+	
+	@Test
+	public void testThirdTriangleIsFirstNonCompTriangle() {
+		assertEquals("Non-Comp", testList.get(2).getProduct());
+		assertEquals(Integer.valueOf(1990), testList.get(2).getOriginYear());
+	}
+	
+	@Test
+	public void testThirdTriangleContainsAllThreeDevelopmentYears() {
+		assertEquals(3, testList.get(2).getListOfProductsInTriangle().size());
+	}
+	
+	
 }
