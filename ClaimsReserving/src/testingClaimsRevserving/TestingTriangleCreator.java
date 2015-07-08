@@ -71,5 +71,4 @@ public class TestingTriangleCreator {
 		assertEquals(Integer.valueOf(1993), testList.get(testList.size() -1).getListOfProductsInTriangle().get(0).getDevelopmentYear());
 		assertEquals(Double.valueOf(100.0), testList.get(testList.size() -1).getListOfProductsInTriangle().get(0).getIncrementValue());
 	}
-	
 }
