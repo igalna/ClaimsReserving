@@ -7,7 +7,7 @@ import org.junit.Test;
 
 import claimsreversing.InputDataFromCSVFile;
 
-public class TestingAccumulateData {
+public class TestingInputDataFromCSVFile {
 	
 	InputDataFromCSVFile store;
 	String[] testData;
