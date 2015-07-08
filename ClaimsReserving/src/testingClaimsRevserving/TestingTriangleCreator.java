@@ -30,9 +30,15 @@ public class TestingTriangleCreator {
 		assertEquals(testList.get(0).getProduct(), "Comp");
 	}
 	
+	
 	@Test
 	public void testGetSecondTriangle() {
 		assertEquals(testList.get(1).getProduct(), "Comp");
 		assertEquals(testList.get(1).getOriginYear(), Integer.valueOf(1993));
+	}
+	@Test
+	public void testSecondTriangleOnlyHasItselfAsProduct() {
+		assertEquals(1, testList.get(1).getListOfProductsInTriangle().size());
+		assertEquals("Comp", testList.get(1).getListOfProductsInTriangle().get(0).getProduct());
 	}
 }

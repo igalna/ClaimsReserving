@@ -2,16 +2,7 @@ package claimsreversing;
 
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-import java.util.stream.Collectors;
 
 import com.opencsv.CSVWriter;
 
@@ -36,12 +27,12 @@ public class OutputDataToCSVFile {
 		return tempWriter;
 	}
 	
-	private int getEarliestYear() {
+/*	private int getEarliestYear() {
 		return inputData.stream().min(TriangleOfPaymentFigures::getOriginYear);	
 	}
 	
 	private int getNumberOfDevelopMentYears() {
 		return (getEarliestYear() - inputData.stream().max(TriangleOfPaymentFigures::getOriginYear)) + 1;
 	}
-
+*/
 }
