@@ -22,7 +22,7 @@ public class TestingProduct {
 	
 	@Test
 	public void testGetProduct() {
-		assertEquals(testProduct.getProduct(), testData[0]);
+		assertEquals(testProduct.getProductName(), testData[0]);
 	}
 
 	@Test

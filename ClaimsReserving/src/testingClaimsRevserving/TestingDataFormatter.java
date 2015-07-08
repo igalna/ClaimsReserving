@@ -41,7 +41,7 @@ public class TestingDataFormatter {
 	
 	@Test
 	public void testProductIsString() {
-		assertEquals("Comp", firstProduct.getProduct());
+		assertEquals("Comp", firstProduct.getProductName());
 	}
 
 	@Test
@@ -63,7 +63,7 @@ public class TestingDataFormatter {
 
 	@Test
 	public void testFinalCaseProductIsString() {
-		assertEquals("Non-Comp", lastProduct.getProduct());
+		assertEquals("Non-Comp", lastProduct.getProductName());
 	}
 	
 	@Test
@@ -85,7 +85,7 @@ public class TestingDataFormatter {
 	
 	@Test
 	public void testMidProductProductName() {
-		assertEquals("Non-Comp", midProduct.getProduct());
+		assertEquals("Non-Comp", midProduct.getProductName());
 	}
 	
 	@Test

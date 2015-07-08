@@ -9,7 +9,7 @@ import lombok.ToString;
 public class Product {
 
 	@Getter
-	private String product;
+	private String productName;
 	@Getter
 	private Integer originYear;
 	@Getter

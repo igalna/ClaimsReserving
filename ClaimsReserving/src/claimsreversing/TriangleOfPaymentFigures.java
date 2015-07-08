@@ -11,7 +11,7 @@ import lombok.ToString;
 public class TriangleOfPaymentFigures {
 
 	@Getter
-	private String product;
+	private String productName;
 	@Getter
 	private Integer originYear;;
 	@Getter

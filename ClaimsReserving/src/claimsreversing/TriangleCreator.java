@@ -17,20 +17,20 @@ public class TriangleCreator {
 	
 		for (Product product : inputData) {
 			if (triangleList.isEmpty()) {
-				TriangleOfPaymentFigures newTriangle = TriangleOfPaymentFigures.of(product.getProduct(), product.getOriginYear(), new ArrayList<Product>());
+				TriangleOfPaymentFigures newTriangle = TriangleOfPaymentFigures.of(product.getProductName(), product.getOriginYear(), new ArrayList<Product>());
 				newTriangle.getListOfProductsInTriangle().add(product);
 				triangleList.add(newTriangle);
 			}
 			else  {
 				boolean flagTriangleAlreadyExists = false;
 				for (TriangleOfPaymentFigures triangle : triangleList) {
-					if (triangle.getProduct().equals(product.getProduct()) && triangle.getOriginYear().equals(product.getOriginYear())) {
+					if (triangle.getProductName().equals(product.getProductName()) && triangle.getOriginYear().equals(product.getOriginYear())) {
 						triangle.getListOfProductsInTriangle().add(product);
 						flagTriangleAlreadyExists = true;
 					}
 				}
 				if (flagTriangleAlreadyExists == false) {
-					TriangleOfPaymentFigures newTriangle = TriangleOfPaymentFigures.of(product.getProduct(), product.getOriginYear(), new ArrayList<Product>());
+					TriangleOfPaymentFigures newTriangle = TriangleOfPaymentFigures.of(product.getProductName(), product.getOriginYear(), new ArrayList<Product>());
 					newTriangle.getListOfProductsInTriangle().add(product);
 					triangleList.add(newTriangle);
 				}

@@ -21,26 +21,26 @@ public class TestingTriangleCreator {
 
 	@Test
 	public void testAddTriangle() {
-		assertEquals(testList.get(0).getProduct(), "Comp");
+		assertEquals(testList.get(0).getProductName(), "Comp");
 	}
 	
 	
 	@Test
 	public void testGetSecondTriangle() {
-		assertEquals(testList.get(1).getProduct(), "Comp");
+		assertEquals(testList.get(1).getProductName(), "Comp");
 		assertEquals(testList.get(1).getOriginYear(), Integer.valueOf(1993));
 	}
 	@Test
 	public void testSecondTriangleOnlyHasItselfAsProduct() {
 		assertEquals(1, testList.get(1).getListOfProductsInTriangle().size());
-		assertEquals("Comp", testList.get(1).getListOfProductsInTriangle().get(0).getProduct());
+		assertEquals("Comp", testList.get(1).getListOfProductsInTriangle().get(0).getProductName());
 		assertEquals(Integer.valueOf(1993), testList.get(1).getListOfProductsInTriangle().get(0).getOriginYear());
 	}
 	
 	
 	@Test
 	public void testThirdTriangleIsFirstNonCompTriangle() {
-		assertEquals("Non-Comp", testList.get(2).getProduct());
+		assertEquals("Non-Comp", testList.get(2).getProductName());
 		assertEquals(Integer.valueOf(1990), testList.get(2).getOriginYear());
 	}
 	
@@ -60,7 +60,7 @@ public class TestingTriangleCreator {
 	public void testLastTriangle() {
 		System.out.println(testList.size());
 		
-		assertEquals("Non-Comp", testList.get(testList.size() -1).getProduct());
+		assertEquals("Non-Comp", testList.get(testList.size() -1).getProductName());
 		assertEquals(Integer.valueOf(1993), testList.get(testList.size() -1).getOriginYear());
 	}
 	
