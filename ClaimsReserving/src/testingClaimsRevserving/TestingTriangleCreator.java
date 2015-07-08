@@ -47,7 +47,29 @@ public class TestingTriangleCreator {
 	@Test
 	public void testThirdTriangleContainsAllThreeDevelopmentYears() {
 		assertEquals(3, testList.get(2).getListOfProductsInTriangle().size());
+		
+		assertEquals(Integer.valueOf(1990), testList.get(2).getListOfProductsInTriangle().get(0).getDevelopmentYear());
+		assertEquals(Integer.valueOf(1991), testList.get(2).getListOfProductsInTriangle().get(1).getDevelopmentYear());
+		assertEquals(Integer.valueOf(1993), testList.get(2).getListOfProductsInTriangle().get(2).getDevelopmentYear());
+		System.out.println(testList.get(2).getListOfProductsInTriangle());
 	}
 	
+	
+	
+	@Test
+	public void testLastTriangle() {
+		System.out.println(testList.size());
+		
+		assertEquals("Non-Comp", testList.get(testList.size() -1).getProduct());
+		assertEquals(Integer.valueOf(1993), testList.get(testList.size() -1).getOriginYear());
+	}
+	
+	@Test
+	public void testLastTriangleContains() {
+		assertEquals(1, testList.get(testList.size() -1).getListOfProductsInTriangle().size());
+		
+		assertEquals(Integer.valueOf(1993), testList.get(testList.size() -1).getListOfProductsInTriangle().get(0).getDevelopmentYear());
+		assertEquals(Double.valueOf(100.0), testList.get(testList.size() -1).getListOfProductsInTriangle().get(0).getIncrementValue());
+	}
 	
 }
