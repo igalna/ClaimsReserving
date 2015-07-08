@@ -17,11 +17,11 @@ import com.opencsv.CSVWriter;
 
 public class OutputDataToCSVFile {
 	
-	private List<Triangle> inputData;
+	private List<TriangleOfPaymentFigures> inputData;
 	private CSVWriter writer;
 
 	
-	public OutputDataToCSVFile(String fileName, Map<String, Map<Integer, List<Product>>> inputData) {
+	public OutputDataToCSVFile(String fileName, List<TriangleOfPaymentFigures> inputData) {
 		this.inputData = inputData;
 		this.writer = getCSVWriterFromFileName(fileName);
 	}
@@ -37,11 +37,11 @@ public class OutputDataToCSVFile {
 	}
 	
 	private int getEarliestYear() {
-		return inputData.stream().min(Triangle::getOriginYear);	
+		return inputData.stream().min(TriangleOfPaymentFigures::getOriginYear);	
 	}
 	
 	private int getNumberOfDevelopMentYears() {
-		return (getEarliestYear() - inputData.stream().max(Triangle::getOriginYear)) + 1;
+		return (getEarliestYear() - inputData.stream().max(TriangleOfPaymentFigures::getOriginYear)) + 1;
 	}
 
 }

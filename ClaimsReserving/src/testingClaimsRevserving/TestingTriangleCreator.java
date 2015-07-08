@@ -9,14 +9,14 @@ import org.junit.Test;
 
 import claimsreversing.InputDataFromCSVFile;
 import claimsreversing.DataRowFormatter;
-import claimsreversing.Triangle;
+import claimsreversing.TriangleOfPaymentFigures;
 import claimsreversing.TriangleCreator;
 
 public class TestingTriangleCreator {
 
 	TriangleCreator creator;
 	DataRowFormatter testFormatter;
-	List<Triangle> testList;
+	List<TriangleOfPaymentFigures> testList;
 	
 	@Before
 	public void buildBefore() {

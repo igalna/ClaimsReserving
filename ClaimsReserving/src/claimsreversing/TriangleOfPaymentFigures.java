@@ -8,7 +8,7 @@ import lombok.ToString;
 
 @AllArgsConstructor(staticName = "of")
 @ToString
-public class Triangle {
+public class TriangleOfPaymentFigures {
 
 	@Getter
 	private String product;
