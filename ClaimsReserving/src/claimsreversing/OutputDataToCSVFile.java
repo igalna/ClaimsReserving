@@ -27,12 +27,28 @@ public class OutputDataToCSVFile {
 		return tempWriter;
 	}
 	
-/*	private int getEarliestYear() {
-		return inputData.stream().min(TriangleOfPaymentFigures::getOriginYear);	
+	public Integer getEarliestYear() {
+		Integer result = Integer.MAX_VALUE;
+		
+		for (TriangleOfPaymentFigures triangle : inputData) {
+			if (triangle.getOriginYear() < result) {
+				result = triangle.getOriginYear();
+			}
+		}
+		return result;
 	}
 	
-	private int getNumberOfDevelopMentYears() {
-		return (getEarliestYear() - inputData.stream().max(TriangleOfPaymentFigures::getOriginYear)) + 1;
+	public Integer getNumberOfDevelopMentYears() {
+		Integer earliestYear = getEarliestYear();
+		Integer result = 1;
+		
+		for (TriangleOfPaymentFigures triangle : inputData) {
+			for (Product product : triangle.getListOfProductsInTriangle()) {
+				if (product.getDevelopmentYear() > earliestYear) {
+					result = (product.getDevelopmentYear() - earliestYear) +1;
+				}
+			}
+		}
+		return result;
 	}
-*/
 }

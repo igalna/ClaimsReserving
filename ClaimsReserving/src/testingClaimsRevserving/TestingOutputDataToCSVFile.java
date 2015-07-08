@@ -1,5 +1,7 @@
 package testingClaimsRevserving;
 
+import static org.junit.Assert.assertEquals;
+
 import java.util.List;
 
 import org.junit.Test;
@@ -18,8 +20,12 @@ public class TestingOutputDataToCSVFile {
 	OutputDataToCSVFile output = new OutputDataToCSVFile("output", testList);
 	
 	@Test
-	public void test() {
-		//assertEquals()
+	public void testgetEarliestYear() {
+		assertEquals(Integer.valueOf(1990), Integer.valueOf(output.getEarliestYear()));
+	}
+	
+	public void testGetNumberOfIncrementYears() {
+		assertEquals(Integer.valueOf(4), Integer.valueOf(output.getNumberOfDevelopMentYears()));
 	}
 
 }
