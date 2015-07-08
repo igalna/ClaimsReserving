@@ -29,4 +29,10 @@ public class TestingTriangleCreator {
 	public void testAddTriangle() {
 		assertEquals(testList.get(0).getProduct(), "Comp");
 	}
+	
+	@Test
+	public void testGetSecondTriangle() {
+		assertEquals(testList.get(1).getProduct(), "Comp");
+		assertEquals(testList.get(1).getOriginYear(), Integer.valueOf(1993));
+	}
 }
