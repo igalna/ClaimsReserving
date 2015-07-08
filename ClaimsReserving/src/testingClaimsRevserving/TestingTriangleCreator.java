@@ -8,13 +8,13 @@ import org.junit.Before;
 import org.junit.Test;
 
 import claimsreversing.InputDataFromCSVFile;
-import claimsreversing.DataRowFormatter;
+import claimsreversing.InputDataFormatter;
 import claimsreversing.TriangleOfPaymentFigures;
 import claimsreversing.TriangleCreator;
 
 public class TestingTriangleCreator {
 
-	DataRowFormatter testFormatter = DataRowFormatter.of(new InputDataFromCSVFile("input").getUnstructuredProductData());
+	InputDataFormatter testFormatter = InputDataFormatter.of(new InputDataFromCSVFile("input").getUnstructuredProductData());
 	TriangleCreator creator = TriangleCreator.of(testFormatter.formatInputDataIntoStructuredProducts());
 	List<TriangleOfPaymentFigures> testList = creator.createTrianglesFromInputData();
 	

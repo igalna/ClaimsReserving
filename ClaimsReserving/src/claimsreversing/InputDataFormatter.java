@@ -8,7 +8,7 @@ import lombok.Getter;
 
 
 @AllArgsConstructor(staticName = "of")
-public class DataRowFormatter {
+public class InputDataFormatter {
 
 	@Getter
 	private List<String[]> inputData;
