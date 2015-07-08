@@ -5,16 +5,16 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-import claimsreversing.AccumulateData;
+import claimsreversing.InputDataFromCSVFile;
 
 public class TestingAccumulateData {
 	
-	AccumulateData store;
+	InputDataFromCSVFile store;
 	String[] testData;
 	
 	@Before
 	public void buildBefore() {
-		store = new AccumulateData("input");
+		store = new InputDataFromCSVFile("input");
 		testData = store.getUnstructuredProductData().get(0);
 	}
 	

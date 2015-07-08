@@ -10,13 +10,13 @@ import lombok.Getter;
 import com.opencsv.CSVReader;
 
 
-public class AccumulateData {
+public class InputDataFromCSVFile {
 	
 	@Getter
 	private List<String[]> unstructuredProductData;
 	private CSVReader reader;
 	
-	public AccumulateData(String fileName) {
+	public InputDataFromCSVFile(String fileName) {
 		this.reader = getCSVReaderFromFileName(fileName);
 		getDataFromCSVReader();
 	}

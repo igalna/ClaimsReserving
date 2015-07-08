@@ -8,7 +8,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import claimsreversing.AccumulateData;
+import claimsreversing.InputDataFromCSVFile;
 import claimsreversing.DataRowFormatter;
 import claimsreversing.Product;
 
@@ -22,7 +22,7 @@ public class TestingDataFormatter {
 	
 	@Before
 	public void buildBefore() {
-		testFormatter = DataRowFormatter.of(new AccumulateData("input").getUnstructuredProductData());
+		testFormatter = DataRowFormatter.of(new InputDataFromCSVFile("input").getUnstructuredProductData());
 		formattedData = testFormatter.formatInputDataIntoStructuredProducts();
 		firstProduct = formattedData.get(0);
 		lastProduct = formattedData.get(formattedData.size()-1);

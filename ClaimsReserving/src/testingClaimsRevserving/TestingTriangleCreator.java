@@ -7,7 +7,7 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
-import claimsreversing.AccumulateData;
+import claimsreversing.InputDataFromCSVFile;
 import claimsreversing.DataRowFormatter;
 import claimsreversing.Triangle;
 import claimsreversing.TriangleCreator;
@@ -20,7 +20,7 @@ public class TestingTriangleCreator {
 	
 	@Before
 	public void buildBefore() {
-		testFormatter = DataRowFormatter.of(new AccumulateData("input").getUnstructuredProductData());
+		testFormatter = DataRowFormatter.of(new InputDataFromCSVFile("input").getUnstructuredProductData());
 		creator = TriangleCreator.of(testFormatter.formatInputDataIntoStructuredProducts());
 		testList = creator.createTrianglesFromInputData();
 	}

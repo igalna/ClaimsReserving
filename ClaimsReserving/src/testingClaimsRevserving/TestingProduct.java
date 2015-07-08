@@ -5,18 +5,18 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-import claimsreversing.AccumulateData;
+import claimsreversing.InputDataFromCSVFile;
 import claimsreversing.Product;
 
 public class TestingProduct {
 
 	Product testProduct = Product.of("Comp", 1992, 1992, 110.0);
-	AccumulateData storeOfUnstructuredData;
+	InputDataFromCSVFile storeOfUnstructuredData;
 	String[] testData;
 	
 	@Before
 	public void buildBefore() {
-		storeOfUnstructuredData = new AccumulateData("input");
+		storeOfUnstructuredData = new InputDataFromCSVFile("input");
 		testData = storeOfUnstructuredData.getUnstructuredProductData().get(0);
 	}
 	
